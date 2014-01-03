@@ -11,5 +11,3 @@ TODOLINES=`grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n TO
 if [ -n "$TODOLINES" ]; then
   fail "TODO(s) Found:\n$TODOLINES"
 fi
-
-success "No Pry or TODO Found."
