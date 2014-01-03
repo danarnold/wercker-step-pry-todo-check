@@ -1,5 +1,8 @@
 #!/bin/sh
 
+debug `pwd`
+debug `ls`
+
 PRYLINES=`grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n binding.pry .`
 
 if [ -n "$PRYLINES" ]; then
