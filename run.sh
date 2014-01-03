@@ -1,7 +1,7 @@
 #!/bin/sh
 
 debug `pwd`
-debug `ls`
+debug `ls -R`
 
 PRYLINES=`grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n binding.pry .`
 
