@@ -1,17 +1,15 @@
-#!/bin/bash
+#!/bin/sh
 
-PRYLINES=$(grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n binding.pry .)
+PRYLINES=`grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n binding.pry .`
 
 if [ -n "$PRYLINES" ]; then
-  error "Pry(s) Found:\n$PRYLINES"
-  exit 1
+  fail "Pry(s) Found:\n$PRYLINES"
 fi
 
-TODOLINES=$(grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n TODO: .)
+TODOLINES=`grep -Rs --exclude-dir .git --exclude-dir log --exclude-dir tmp -n TODO: .`
 
 if [ -n "$TODOLINES" ]; then
-  error "TODO(s) Found:\n$TODOLINES"
-  exit 1
+  fail "TODO(s) Found:\n$TODOLINES"
 fi
 
-exit 0
+success "No Pry or TODO Found."
