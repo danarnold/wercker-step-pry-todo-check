@@ -13,3 +13,5 @@ if [ -n "$TODOLINES" ]; then
   error "TODO(s) Found:\n$TODOLINES"
   exit 1
 fi
+
+exit 0
